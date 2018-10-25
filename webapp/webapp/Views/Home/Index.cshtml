@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
-<form action="/Home/AddInfo3" method="post">
+<form action="/Home/AddInfo6" method="post">
     <h3>用户注册</h3>
     <table>
         <tr>
@@ -15,7 +15,11 @@
         </tr>
         <tr>
             <td>性别：</td>
-            <td><input type="text" name="sex" /></td>
+            <td><select name="sex">
+                <option value="男">男</option>
+                <option value="女">女</option>
+                </select>
+            </td>
         </tr>
         <tr>
             

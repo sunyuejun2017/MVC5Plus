@@ -1,0 +1,53 @@
+﻿@model webapp.Models.UserInfo
+
+@{
+    ViewBag.Title = "AddInfo4";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+    table {
+        border:1px solid #ff0000;
+
+    }
+    table td {
+
+    }
+</style>
+<h2>AddInfo4</h2>
+
+<div>
+    <h4>UserInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           姓名：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+           年龄：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            性别：
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sex)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

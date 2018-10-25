@@ -1,0 +1,49 @@
+﻿@model PagedList.IPagedList<webapp.Models.UserInfo>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "AddInfo5";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddInfo5</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            姓名
+        </th>
+        <th>
+            年龄
+        </th>
+        <th>
+            性别
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sex)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+    
+</table>
+每页 @Model.PageSize 条数据，共 @Model.PageCount 页, 当前 @Model.PageNumber 页
+@Html.PagedListPager(Model,page=>Url.Action("AddInfo6",new {page}))
